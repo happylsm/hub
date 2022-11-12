@@ -27,7 +27,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("HUB Project Api")
+                .title("HUB Project Api Dev Test")
                 .description("Hub 사이드프로젝트 api 입니다.")
                 .version("0.1")
                 .build();
