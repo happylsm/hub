@@ -4,47 +4,38 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Version;
 
 import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.ToString;
 
-@Data
+@Getter
 @Entity
 @DynamicUpdate
 @ToString
-@Table(name="member")
-public class MemberEntity {
-
-	@Version
-    private Long _version;
-
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true)
-    private String email;
-    
+@Table(name="userDetail")
+public class UserDetailEntity {
+	
+	@OneToOne
+	@JoinColumn(name="id")
+	private UserEntity id;
+	
     private String birth;
-    
-    private String password;
     
     private String region;
     
     @Column(unique = true)
     private String nickName;
     
-    private String userStatus;
-    
     private String gender;
-    
+
     @CreatedDate
 	@Column(name="created_at")
 	private Date createdAt;
@@ -52,5 +43,4 @@ public class MemberEntity {
 	@LastModifiedDate
 	@Column(name="updated_at")
 	private Date updatedAt;
-
 }
