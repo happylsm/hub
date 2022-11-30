@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import hubSideProject.hubApi.api.dto.request.UserReqDto;
 import hubSideProject.hubApi.api.service.UserService;
+import hubSideProject.hubApi.common.dto.DataResDto;
+import hubSideProject.hubApi.common.exception.HubException;
+import hubSideProject.hubApi.common.exception.HubExceptionCode;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
@@ -17,6 +19,24 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
+	
+    // exception 테스트용 
+    @GetMapping(path = "/error")
+    public DataResDto<Object> testHubException() {
+        Boolean test = false;
+        if (!test) {
+            throw new HubException(HubExceptionCode.INTERNAL_ERROR, "Internal error");
+			/*
+			 { 
+			 	"success": false, 
+			 	"code": 20002, 
+			 	"message": "Internal error - Internal error" 
+			 }
+			 */
+        }
+		
+        return DataResDto.empty();
+    }
 	
 	@ApiOperation(
 			value = "회원가입"

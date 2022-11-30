@@ -4,6 +4,10 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -12,7 +16,6 @@ import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -20,20 +23,23 @@ import lombok.ToString;
 @Entity
 @DynamicUpdate
 @ToString
-@Table(name="userDetail")
+@Table(name="user_detail")
 public class UserDetailEntity {
 	
-	@OneToOne
-	@JoinColumn(name="id")
-	private UserEntity id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
 	
+    @Column(name = "nick_name", unique = true)
+    private String nickName;
+	
+	@Column(name="birth")
     private String birth;
     
+	@Column(name="region")
     private String region;
     
-    @Column(unique = true)
-    private String nickName;
-    
+    @Column(name="gender")
     private String gender;
 
     @CreatedDate
