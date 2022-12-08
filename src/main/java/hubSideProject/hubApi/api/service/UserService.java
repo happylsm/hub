@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 @Service
 public interface UserService {
 
-	boolean emailDuplicateCheck(String email);
+	boolean existsByEmail(String email);
+
+	boolean existsByNickName(String nickName);
 	
 }

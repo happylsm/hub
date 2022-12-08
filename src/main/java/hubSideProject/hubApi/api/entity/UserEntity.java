@@ -36,6 +36,9 @@ public class UserEntity {
 
 	@Column(name = "password")
 	private String password;
+	
+	@Column(name = "join_channel")
+	private String joinChannel;
 
 	@CreatedDate
 	@Column(name = "created_at")

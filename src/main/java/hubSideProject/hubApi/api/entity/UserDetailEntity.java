@@ -30,7 +30,7 @@ public class UserDetailEntity {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-    @Column(name = "nick_name", unique = true)
+    @Column(name = "nickname", unique = true)
     private String nickName;
 	
 	@Column(name="birth")
