@@ -5,9 +5,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import hubSideProject.hubApi.api.dto.request.UserReqDto;
+import hubSideProject.hubApi.api.dto.response.UserResDto;
 import hubSideProject.hubApi.api.service.UserService;
 import hubSideProject.hubApi.common.dto.DataResDto;
 import hubSideProject.hubApi.common.exception.HubException;
@@ -43,9 +46,9 @@ public class UserController {
 			value = "회원가입"
 			, notes = "회원가입을 하는 api")
 	@PostMapping("/sign-up")
-	public DataResDto<Object> signUP() {
-		return null;
-		
+	public DataResDto<Object> signUP(@RequestBody UserReqDto userResDto) {
+		UserResDto data = userService.signUp(userResDto);
+		return DataResDto.of(data);
 	}
 	
 	@ApiOperation(
