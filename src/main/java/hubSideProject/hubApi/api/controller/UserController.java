@@ -1,5 +1,9 @@
 package hubSideProject.hubApi.api.controller;
 
+import java.io.UnsupportedEncodingException;
+
+import javax.mail.MessagingException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import hubSideProject.hubApi.api.dto.request.UserReqDto;
 import hubSideProject.hubApi.api.dto.response.UserResDto;
+import hubSideProject.hubApi.api.service.EmailSendService;
 import hubSideProject.hubApi.api.service.UserService;
 import hubSideProject.hubApi.common.dto.DataResDto;
 import hubSideProject.hubApi.common.exception.HubException;
@@ -21,8 +26,15 @@ import io.swagger.annotations.ApiOperation;
 @RequestMapping("/api/user")
 public class UserController {
 	
-	@Autowired
 	private UserService userService;
+	private EmailSendService emailSendService;
+	
+	@Autowired
+	public UserController (UserService userService, EmailSendService emailSendService) {
+		this.userService = userService;
+		this.emailSendService = emailSendService;
+	}
+	
 	
     // exception 테스트용 
     @GetMapping(path = "/error")
@@ -80,9 +92,10 @@ public class UserController {
 	@ApiOperation(
 			value = "email 인증번호 발송"
 			, notes = "email 인증번호 발송을 하는 api")
-	@GetMapping("/send-auth-code")
-	public String sendAuthCode() {
-		return "들어왓삼";
+	@GetMapping("/send-auth-code/{email}")
+	public DataResDto<Object> sendAuthCode(@PathVariable("email") String email) throws UnsupportedEncodingException, MessagingException {
+		String result = emailSendService.sendEmail(email);
+		return DataResDto.of(result);
 	}
 	
 	@ApiOperation(
