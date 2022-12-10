@@ -15,7 +15,6 @@ public class UserResDto {
 	private String email;
 
     //entity -> dto
-	@Builder
     public static UserResDto of(UserEntity userEntity){
         return UserResDto.builder()
                 .email(userEntity.getEmail())

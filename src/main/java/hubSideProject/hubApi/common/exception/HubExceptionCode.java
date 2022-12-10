@@ -23,7 +23,8 @@ public enum HubExceptionCode {
     BAD_REQUEST(20001, HttpStatus.BAD_REQUEST, "Bad request"),
     INTERNAL_ERROR(20002, HttpStatus.INTERNAL_SERVER_ERROR, "Internal error"),
     
-    EMAIL_DUPLICATED(10001, HttpStatus.BAD_REQUEST, "email duplicated");
+    EMAIL_DUPLICATED(10001, HttpStatus.BAD_REQUEST, "email duplicated"),
+	FAIL_SIGN_UP(10002, HttpStatus.BAD_REQUEST, "fail sign up");
 
     private final Integer code;
     private final HttpStatus httpStatus;

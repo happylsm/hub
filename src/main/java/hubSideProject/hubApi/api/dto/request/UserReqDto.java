@@ -20,7 +20,6 @@ public class UserReqDto {
     private HubRole role;
 
     //dto -> entity
-	@Builder
     public UserEntity toEntity(){
         return UserEntity.builder()
                 .email(email)

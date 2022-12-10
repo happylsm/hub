@@ -16,6 +16,8 @@ import hubSideProject.hubApi.api.entity.UserEntity;
 import hubSideProject.hubApi.api.repository.UserDetailRepository;
 import hubSideProject.hubApi.api.repository.UserRepository;
 import hubSideProject.hubApi.api.service.UserService;
+import hubSideProject.hubApi.common.exception.HubException;
+import hubSideProject.hubApi.common.exception.HubExceptionCode;
 
 @Service
 public class UserServiceImp implements UserService{
@@ -43,7 +45,6 @@ public class UserServiceImp implements UserService{
 		return userDetailRepository.existsByNickName(nickName);
 	}
 
-	@Transactional
 	@Override
 	public UserResDto signUp(UserReqDto reqDto) {
 		LOGGER.info("회원 가입 정보 저장");
@@ -51,9 +52,9 @@ public class UserServiceImp implements UserService{
         user.encodePassword(passwordEncoder);
         UserEntity savedUser = userRepository.save(user);
         
-        if(savedUser.getEmail().isEmpty()) {
-        	//어쩌고
-        }
+        if (savedUser.getEmail().isEmpty()) {
+        	throw new HubException(HubExceptionCode.FAIL_SIGN_UP);
+        } 
 
 		return UserResDto.of(user);
 	}
