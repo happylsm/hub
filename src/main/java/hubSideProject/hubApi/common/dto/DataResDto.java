@@ -8,12 +8,12 @@ public class DataResDto<T> extends BaseResDto{
     private final T data;
 
     private DataResDto(T data) {
-        super(true, HubExceptionCode.OK.getCode(), HubExceptionCode.OK.getMessage());
+        super(HubExceptionCode.OK.getCode(), HubExceptionCode.OK.getMessage());
         this.data = data;
     }
 
     private DataResDto(T data, String message) {
-        super(true, HubExceptionCode.OK.getCode(), message);
+        super(HubExceptionCode.OK.getCode(), message);
         this.data = data;
     }
 
