@@ -1,4 +1,4 @@
-package hubSideProject.hubApi.api.service.impl;
+package hubSideProject.hubApi.user.service.impl;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Random;
@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
-import hubSideProject.hubApi.api.service.EmailSendService;
+import hubSideProject.hubApi.user.service.EmailSendService;
 import lombok.RequiredArgsConstructor;
 
 @Service

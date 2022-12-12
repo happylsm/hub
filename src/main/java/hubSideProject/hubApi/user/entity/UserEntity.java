@@ -1,4 +1,4 @@
-package hubSideProject.hubApi.api.entity;
+package hubSideProject.hubApi.user.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "user")
+@Table(schema="user", name = "user")
 public class UserEntity extends BaseEntity{
 
 	@Id

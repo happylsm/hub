@@ -1,4 +1,4 @@
-package hubSideProject.hubApi.api.mapper;
+package hubSideProject.hubApi.user.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 

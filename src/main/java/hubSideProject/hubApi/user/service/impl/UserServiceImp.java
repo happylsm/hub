@@ -1,4 +1,4 @@
-package hubSideProject.hubApi.api.service.impl;
+package hubSideProject.hubApi.user.service.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import hubSideProject.hubApi.api.dto.request.UserReqDto;
-import hubSideProject.hubApi.api.dto.response.UserResDto;
-import hubSideProject.hubApi.api.entity.UserEntity;
-import hubSideProject.hubApi.api.repository.UserDetailRepository;
-import hubSideProject.hubApi.api.repository.UserRepository;
-import hubSideProject.hubApi.api.service.UserService;
 import hubSideProject.hubApi.common.exception.HubException;
 import hubSideProject.hubApi.common.exception.HubExceptionCode;
+import hubSideProject.hubApi.user.dto.request.UserReqDto;
+import hubSideProject.hubApi.user.dto.response.UserResDto;
+import hubSideProject.hubApi.user.entity.UserEntity;
+import hubSideProject.hubApi.user.repository.UserDetailRepository;
+import hubSideProject.hubApi.user.repository.UserRepository;
+import hubSideProject.hubApi.user.service.UserService;
 
 @Service
 public class UserServiceImp implements UserService{

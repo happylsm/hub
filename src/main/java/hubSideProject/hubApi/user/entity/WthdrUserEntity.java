@@ -1,4 +1,4 @@
-package hubSideProject.hubApi.api.entity;
+package hubSideProject.hubApi.user.entity;
 
 import java.util.Date;
 
@@ -22,7 +22,7 @@ import lombok.ToString;
 @Entity
 @DynamicUpdate
 @ToString
-@Table(name="withdrawal_user")
+@Table(schema="user", name="withdrawal_user")
 public class WthdrUserEntity {
 	
 	@Id

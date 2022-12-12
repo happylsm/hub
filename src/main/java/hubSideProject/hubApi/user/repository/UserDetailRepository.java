@@ -1,8 +1,8 @@
-package hubSideProject.hubApi.api.repository;
+package hubSideProject.hubApi.user.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import hubSideProject.hubApi.api.entity.UserDetailEntity;
+import hubSideProject.hubApi.user.entity.UserDetailEntity;
 
 public interface UserDetailRepository extends JpaRepository<UserDetailEntity, Long>{
 

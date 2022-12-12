@@ -14,12 +14,24 @@ import springfox.documentation.spring.web.plugins.Docket;
 @Configuration
 @EnableWebMvc
 public class SwaggerConfig {
+	
 	@Bean
-    public Docket api() {
+    public Docket userApi() {	
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("hubSideProject.hubApi")
+                .groupName("user")
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("hubSideProject.hubApi.api.controller"))
+                .apis(RequestHandlerSelectors.basePackage("hubSideProject.hubApi.user.controller"))
+                .paths(PathSelectors.any())
+                .build()
+                .apiInfo(apiInfo());
+    }
+	
+	@Bean
+    public Docket postApi() {	
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("post")
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("hubSideProject.hubApi.post.controller"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo());

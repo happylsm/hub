@@ -1,6 +1,6 @@
-package hubSideProject.hubApi.api.dto.response;
+package hubSideProject.hubApi.user.dto.response;
 
-import hubSideProject.hubApi.api.entity.UserEntity;
+import hubSideProject.hubApi.user.entity.UserEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

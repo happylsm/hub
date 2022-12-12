@@ -1,4 +1,4 @@
-package hubSideProject.hubApi.api.service;
+package hubSideProject.hubApi.user.service;
 
 import java.io.UnsupportedEncodingException;
 

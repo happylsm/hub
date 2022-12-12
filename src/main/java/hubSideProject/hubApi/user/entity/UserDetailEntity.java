@@ -1,4 +1,4 @@
-package hubSideProject.hubApi.api.entity;
+package hubSideProject.hubApi.user.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +16,7 @@ import lombok.ToString;
 @Entity
 @DynamicUpdate
 @ToString
-@Table(name="user_detail")
+@Table(schema="user", name="user_detail")
 public class UserDetailEntity {
 	
 	@Id

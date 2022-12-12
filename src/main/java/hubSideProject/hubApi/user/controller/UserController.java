@@ -1,11 +1,10 @@
-package hubSideProject.hubApi.api.controller;
+package hubSideProject.hubApi.user.controller;
 
 import java.io.UnsupportedEncodingException;
 
 import javax.mail.MessagingException;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,17 +12,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import hubSideProject.hubApi.api.dto.request.UserReqDto;
-import hubSideProject.hubApi.api.dto.response.UserResDto;
-import hubSideProject.hubApi.api.service.EmailSendService;
-import hubSideProject.hubApi.api.service.UserService;
 import hubSideProject.hubApi.common.dto.DataResDto;
 import hubSideProject.hubApi.common.exception.HubException;
 import hubSideProject.hubApi.common.exception.HubExceptionCode;
+import hubSideProject.hubApi.user.dto.request.UserReqDto;
+import hubSideProject.hubApi.user.dto.response.UserResDto;
+import hubSideProject.hubApi.user.service.EmailSendService;
+import hubSideProject.hubApi.user.service.UserService;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/user")
 public class UserController {
 	
 	private UserService userService;
@@ -103,6 +102,7 @@ public class UserController {
 			, notes = "email 인증번호 확인을 하는 api")
 	@GetMapping("/verify-auth-code")
 	public String verifyAuthCode() {
+
 		return "들어왓삼";
 	}
 

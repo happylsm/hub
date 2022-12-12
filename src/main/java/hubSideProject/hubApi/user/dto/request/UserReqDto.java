@@ -1,7 +1,7 @@
-package hubSideProject.hubApi.api.dto.request;
+package hubSideProject.hubApi.user.dto.request;
 
-import hubSideProject.hubApi.api.entity.UserEntity;
 import hubSideProject.hubApi.common.HubRole;
+import hubSideProject.hubApi.user.entity.UserEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

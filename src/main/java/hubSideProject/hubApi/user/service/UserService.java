@@ -1,9 +1,9 @@
-package hubSideProject.hubApi.api.service;
+package hubSideProject.hubApi.user.service;
 
 import org.springframework.stereotype.Service;
 
-import hubSideProject.hubApi.api.dto.request.UserReqDto;
-import hubSideProject.hubApi.api.dto.response.UserResDto;
+import hubSideProject.hubApi.user.dto.request.UserReqDto;
+import hubSideProject.hubApi.user.dto.response.UserResDto;
 
 @Service
 public interface UserService {
