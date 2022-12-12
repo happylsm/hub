@@ -1,4 +1,4 @@
-package hubSideProject.hubApi.config;
+package hubSideProject.hubApi.common.config;
 
 import javax.sql.DataSource;
 
