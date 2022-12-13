@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(schema="user", name = "user")
+@Table(catalog ="user", name = "user")
 public class UserEntity extends BaseEntity{
 
 	@Id

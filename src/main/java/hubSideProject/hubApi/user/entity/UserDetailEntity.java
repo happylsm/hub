@@ -16,7 +16,7 @@ import lombok.ToString;
 @Entity
 @DynamicUpdate
 @ToString
-@Table(schema="user", name="user_detail")
+@Table(catalog ="user", name="user_detail")
 public class UserDetailEntity {
 	
 	@Id
