@@ -1,4 +1,4 @@
-package hubSideProject.hubApi.common.Entity;
+package hubSideProject.hubApi.common.entity;
 
 import java.time.LocalDateTime;
 

@@ -13,8 +13,8 @@ import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import hubSideProject.hubApi.common.HubRole;
-import hubSideProject.hubApi.common.Entity.BaseEntity;
+import hubSideProject.hubApi.common.entity.BaseEntity;
+import hubSideProject.hubApi.common.hubEnum.HubRole;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

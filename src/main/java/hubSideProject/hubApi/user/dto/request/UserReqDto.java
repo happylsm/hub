@@ -1,6 +1,6 @@
 package hubSideProject.hubApi.user.dto.request;
 
-import hubSideProject.hubApi.common.HubRole;
+import hubSideProject.hubApi.common.hubEnum.HubRole;
 import hubSideProject.hubApi.user.entity.UserEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
