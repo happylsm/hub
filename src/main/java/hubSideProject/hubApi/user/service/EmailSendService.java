@@ -1,9 +1,9 @@
 package hubSideProject.hubApi.user.service;
 
-import java.io.UnsupportedEncodingException;
-
-import javax.mail.MessagingException;
+import hubSideProject.hubApi.user.dto.request.EmailAuthReqDto;
 
 public interface EmailSendService {
-	String sendEmail(String toEmail) throws MessagingException, UnsupportedEncodingException;
+	boolean sendAuthCode(String toEmail);
+
+	boolean verifyAuthCode(EmailAuthReqDto emailAuthReqDto);
 }

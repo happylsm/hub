@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import hubSideProject.hubApi.common.dto.DataResDto;
 import hubSideProject.hubApi.common.exception.HubException;
 import hubSideProject.hubApi.common.exception.HubExceptionCode;
+import hubSideProject.hubApi.user.dto.request.EmailAuthReqDto;
 import hubSideProject.hubApi.user.dto.request.UserReqDto;
 import hubSideProject.hubApi.user.dto.response.UserResDto;
 import hubSideProject.hubApi.user.service.EmailSendService;
@@ -57,8 +58,8 @@ public class UserController {
 			value = "회원가입"
 			, notes = "회원가입을 하는 api")
 	@PostMapping("/sign-up")
-	public DataResDto<Object> signUP(@RequestBody UserReqDto userResDto) {
-		UserResDto data = userService.signUp(userResDto);
+	public DataResDto<Object> signUP(@RequestBody UserReqDto userReqDto) {
+		UserResDto data = userService.signUp(userReqDto);
 		return DataResDto.of(data);
 	}
 	
@@ -92,18 +93,18 @@ public class UserController {
 			value = "email 인증번호 발송"
 			, notes = "email 인증번호 발송을 하는 api")
 	@GetMapping("/send-auth-code/{email}")
-	public DataResDto<Object> sendAuthCode(@PathVariable("email") String email) throws UnsupportedEncodingException, MessagingException {
-		String result = emailSendService.sendEmail(email);
+	public DataResDto<Object> sendAuthCode(@PathVariable("email") String email) {
+		boolean result = emailSendService.sendAuthCode(email);
 		return DataResDto.of(result);
 	}
 	
 	@ApiOperation(
 			value = "email 인증번호 확인"
 			, notes = "email 인증번호 확인을 하는 api")
-	@GetMapping("/verify-auth-code")
-	public String verifyAuthCode() {
-
-		return "들어왓삼";
+	@PostMapping("/verify-auth-code")
+	public DataResDto<Object> verifyAuthCode(@RequestBody EmailAuthReqDto emailAuthReqDto) {
+		boolean result = emailSendService.verifyAuthCode(emailAuthReqDto);
+		return DataResDto.of(result);
 	}
 
 }
